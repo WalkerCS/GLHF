@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1</title>
+    <style>
+        input,
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="detailsfrm">
+        <p>Students ID :
+            <input type="text" name="stud_id" maxlength="10" />
+            <span id="error_id"></span></p>
+        <p>CGPA :
+            <input type="number" name="stud_cgpa" maxlength="4" />
+            <span id="error_cgpa"></span></p>
+        <p>Programme :
+            <input type="radio" name="programme" value="DIT" />Information Technology
+            <input type="radio" name="programme" value="DIA" />Accounting
+            <input type="radio" name="programme" value="DET" />Engineering
+            <span id="error_prog"></span>
+            <p>
+                <input type="button" name="displaybtn" value="Display Details" onclick="validate();" />
+            </p>
+    </form>
+    <script>
+        var Ttomato, Tcarrot, Tpotato;
+
+        function calculate() {
+            var t, c, p;
+            t = parseFloat(document.totalfrm.tomato.value);
+            c = parseFloat(document.totalfrm.carrot.value);
+            p = parseFloat(document.totalfrm.potato.value);
+
+            Ttomato = t * 2.20;
+            Tcarrot = c * 0.90;
+            Tpotato = p * 1.50;
+            console.log(Ttomato);
+
+            document.getElementById("Ptomato").innerHTML = Ttomato.toFixed(2);
+            document.getElementById("Pcarrot").innerHTML = Tcarrot.toFixed(2);
+            document.getElementById("Ppotato").innerHTML = Tpotato.toFixed(2);
+        }
+
+        function total() {
+            var total = Ttomato + Tcarrot + Tpotato;
+            alert("Total = RM " + total);
+        }
+    </script>
+</body>
+
+</html>
